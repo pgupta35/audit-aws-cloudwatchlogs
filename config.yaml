@@ -1,10 +1,10 @@
 variables:
     AUDIT_AWS_CLOUDWATCHLOGS_ALERT_LIST:
-        description: "Which alerts would you like to check for? Default is all Cloudwatchlogs alerts. Choices are cloudwatchlogs-inventory"
+        description: "Which alerts would you like to check for? Default is all CLOUDWATCHLOGS alerts. Choices are kms-inventory"
         required: false
         type: array
         default:
-            - cloudwatchlogs-inventory
+            - kms-inventory
     AUDIT_AWS_CLOUDWATCHLOGS_ALLOW_EMPTY:
         description: "Would you like to receive empty reports? Options - true / false. Default is false."
         required: true
@@ -40,7 +40,7 @@ variables:
             - eu-west-2
             - sa-east-1
     AUDIT_AWS_CLOUDWATCHLOGS_OWNER_TAG:
-        description: "Enter an AWS tag whose value is an email address of the owner of the Cloudwatchlogs object. (Optional)"
+        description: "Enter an AWS tag whose value is an email address of the owner of the CLOUDWATCHLOGS object. (Optional)"
         required: false
         type: string
         default: "NOT_A_TAG"

@@ -1,13 +1,13 @@
-audit RDS
+audit cloudwatchlogs
 ============================
-This stack will monitor RDS and alert on things CloudCoreo developers think are violations of best practices
+This stack will monitor cloudwatchlogs and alert on things CloudCoreo developers think are violations of best practices
 
 
 ## Description
-This repo is designed to work with CloudCoreo. It will monitor RDS against best practices for you and send a report to the email address designated by the config.yaml AUDIT_AWS_RDS_ALERT_RECIPIENT value
+This repo is designed to work with CloudCoreo. It will monitor cloudwatchlogs against best practices for you and send a report to the email address designated by the config.yaml AUDIT_AWS_CLOUDWATCHLOGS_ALERT_RECIPIENT value
 
 ## Hierarchy
-![composite inheritance hierarchy](https://raw.githubusercontent.com/CloudCoreo/STACK/master/images/hierarchy.png "composite inheritance hierarchy")
+![composite inheritance hierarchy](https://raw.githubusercontent.com/CloudCoreo/audit-aws-cloudwatchlogs/master/images/hierarchy.png "composite inheritance hierarchy")
 
 
 
@@ -34,11 +34,11 @@ This repo is designed to work with CloudCoreo. It will monitor RDS against best 
 ## Optional variables with default
 
 ### `AUDIT_AWS_CLOUDWATCHLOGS_ALERT_LIST`:
-  * description: Which alerts would you like to check for? Default is all Cloudwatchlogs alerts. Choices are cloudwatchlogs-inventory
-  * default: cloudwatchlogs-inventory
+  * description: Which alerts would you like to check for? Default is all CLOUDWATCHLOGS alerts. Choices are kms-inventory
+  * default: kms-inventory
 
 ### `AUDIT_AWS_CLOUDWATCHLOGS_OWNER_TAG`:
-  * description: Enter an AWS tag whose value is an email address of the owner of the Cloudwatchlogs object. (Optional)
+  * description: Enter an AWS tag whose value is an email address of the owner of the CLOUDWATCHLOGS object. (Optional)
   * default: NOT_A_TAG
 
 
@@ -51,7 +51,7 @@ This repo is designed to work with CloudCoreo. It will monitor RDS against best 
 1. Audit
 1. Best Practices
 1. Alert
-1. RDS
+1. cloudwatchlogs
 
 ## Categories
 1. Audit
@@ -59,7 +59,7 @@ This repo is designed to work with CloudCoreo. It will monitor RDS against best 
 
 
 ## Diagram
-![diagram](https://raw.githubusercontent.com/CloudCoreo/STACK/master/images/diagram.png "diagram")
+![diagram](https://raw.githubusercontent.com/CloudCoreo/audit-aws-cloudwatchlogs/master/images/diagram.png "diagram")
 
 
 ## Icon
