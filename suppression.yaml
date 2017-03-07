@@ -1,4 +1,4 @@
-cloudwatchlogs-rule-1:
+cloudwatchlogs-inventory:
   - put-your-object-id-here-1: ""
   - put-your-object-id-here-2: "2017-01-10T00:00Z"
 
