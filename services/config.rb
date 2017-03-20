@@ -80,17 +80,17 @@ const ALLOW_EMPTY = "${AUDIT_AWS_CLOUDWATCHLOGS_ALLOW_EMPTY}";
 const SEND_ON = "${AUDIT_AWS_CLOUDWATCHLOGS_SEND_ON}";
 const SHOWN_NOT_SORTED_VIOLATIONS_COUNTER = false;
 
-const VARIABLES = { NO_OWNER_EMAIL, OWNER_TAG, 
+const SETTINGS = { NO_OWNER_EMAIL, OWNER_TAG,
     ALLOW_EMPTY, SEND_ON, SHOWN_NOT_SORTED_VIOLATIONS_COUNTER};
 
 const CloudCoreoJSRunner = require('cloudcoreo-jsrunner-commons');
-const AuditCLOUDWATCHLOGS = new CloudCoreoJSRunner(JSON_INPUT, VARIABLES);
-const notifiers = AuditCLOUDWATCHLOGS.getNotifiers();
+const AuditCLOUDWATCHLOGS = new CloudCoreoJSRunner(JSON_INPUT, SETTINGS);
+const letters = AuditCLOUDWATCHLOGS.getLetters();
 
-const JSONReportAfterGeneratingSuppression = AuditCLOUDWATCHLOGS.getSortedJSONForHTMLReports();
+const JSONReportAfterGeneratingSuppression = AuditCLOUDWATCHLOGS.getSortedJSONForAuditPanel();
 coreoExport('JSONReport', JSON.stringify(JSONReportAfterGeneratingSuppression));
 
-callback(notifiers);
+callback(letters);
   EOH
 end
 
