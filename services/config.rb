@@ -8,7 +8,6 @@ coreo_aws_rule "cloudwatchlogs-inventory" do
   category "Inventory"
   suggested_action "None."
   level "Informational"
-  meta_cis_id "99.999"
   objectives ["metric_filters"]
   audit_objects ["object.metric_filters.filter_name"]
   operators ["=~"]
