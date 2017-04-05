@@ -1,0 +1,3 @@
+cloudwatchlogs-inventory:
+  "Log Name": "__OBJECT__~https://console.aws.amazon.com/cloudwatch/home?region=+__OBJECT__.violations.__RULE__.region+#logs:"
+  "AWS Tags": "__TAGS__"
