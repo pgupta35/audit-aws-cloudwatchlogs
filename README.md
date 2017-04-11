@@ -63,5 +63,5 @@ This repo is designed to work with CloudCoreo. It will monitor cloudwatchlogs ag
 
 
 ## Icon
-
+![icon](https://raw.githubusercontent.com/CloudCoreo/audit-aws-cloudwatchlogs/master/images/icon.png "icon")
 
