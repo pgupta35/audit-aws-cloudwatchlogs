@@ -1,3 +1,5 @@
 cloudwatchlogs-inventory:
   "Log Name": "__OBJECT__~https://console.aws.amazon.com/cloudwatch/home?region=+__OBJECT__.violations.__RULE__.region+#logStream:group=__OBJECT__"
+#  "retention_in_days": "+__OBJECT__.violations.__RULE__.result_info.0.object.retention_in_days+"
+  "Metric Filter Count": "+__OBJECT__.violations.__RULE__.result_info.0.object.metric_filter_count+""
   "AWS Region": "+__OBJECT__.violations.__RULE__.region+"
