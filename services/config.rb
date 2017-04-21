@@ -8,11 +8,20 @@ coreo_aws_rule "cloudwatchlogs-inventory" do
   category "Inventory"
   suggested_action "None."
   level "Informational"
-  objectives ["metric_filters"]
-  audit_objects ["object.metric_filters.filter_name"]
+  objectives ["log_streams"]
+  audit_objects ["object.log_streams.log_stream_name"]
   operators ["=~"]
   raise_when [//]
-  id_map "object.metric_filters.filter_name"
+  id_map "object.log_streams.log_stream_name"
+end
+
+coreo_uni_util_variables "cloudwatchlogs-planwide" do
+  action :set
+  variables([
+                {'COMPOSITE::coreo_uni_util_variables.cloudwatchlogs-planwide.composite_name' => 'PLAN::stack_name'},
+                {'COMPOSITE::coreo_uni_util_variables.cloudwatchlogs-planwide.plan_name' => 'PLAN::name'},
+                {'GLOBAL::number_violations' => '0'}
+            ])
 end
 
 coreo_aws_rule_runner "advise-cloudwatchlogs" do
@@ -122,6 +131,13 @@ setTextRollup();
 
 callback(textRollup);
   EOH
+end
+
+coreo_uni_util_variables "cloudwatchlogs-update-planwide" do
+  action :set
+  variables([
+                {'GLOBAL::table' => 'COMPOSITE::coreo_uni_util_jsrunner.tags-to-notifiers-array-cloudwatchlogs.table'}
+            ])
 end
 
 coreo_uni_util_notify "advise-cloudwatchlogs-to-tag-values" do
