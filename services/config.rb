@@ -8,11 +8,11 @@ coreo_aws_rule "cloudwatchlogs-inventory" do
   category "Inventory"
   suggested_action "None."
   level "Informational"
-  objectives ["log_streams"]
-  audit_objects ["object.log_streams.log_stream_name"]
+  objectives ["log_groups"]
+  audit_objects ["object.log_groups.log_group_name"]
   operators ["=~"]
   raise_when [//]
-  id_map "object.log_streams.log_stream_name"
+  id_map "object.log_groups.log_group_name"
 end
 
 coreo_uni_util_variables "cloudwatchlogs-planwide" do
