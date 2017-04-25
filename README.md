@@ -34,11 +34,11 @@ This repo is designed to work with CloudCoreo. It will monitor cloudwatchlogs ag
 ## Optional variables with default
 
 ### `AUDIT_AWS_CLOUDWATCHLOGS_ALERT_LIST`:
-  * description: Which alerts would you like to check for? Default is all CLOUDWATCHLOGS alerts. Choices are kms-inventory
+  * description: Which rules would you like to run? Possible values are cloudwatchlogs-inventory
   * default: cloudwatchlogs-inventory
 
 ### `AUDIT_AWS_CLOUDWATCHLOGS_OWNER_TAG`:
-  * description: Enter an AWS tag whose value is an email address of the owner of the CLOUDWATCHLOGS object. (Optional)
+  * description: Enter an AWS tag whose value is an email address of the owner of the cloudwatchlogs object. (Optional)
   * default: NOT_A_TAG
 
 
