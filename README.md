@@ -54,8 +54,7 @@ This repo is designed to work with CloudCoreo. It will monitor cloudwatchlogs ag
 1. cloudwatchlogs
 
 ## Categories
-1. Audit
-
+1. AWS Services Audit
 
 
 ## Diagram
