@@ -1,10 +1,11 @@
-audit cloudwatchlogs
+cloudwatchlogs audit
 ============================
-This stack will monitor cloudwatchlogs and alert on things CloudCoreo developers think are violations of best practices
+This composite monitors cloudwatchlogs and reports best practice violations, standards body policy violations, and inventory
 
 
 ## Description
-This repo is designed to work with CloudCoreo. It will monitor cloudwatchlogs against best practices for you and send a report to the email address designated by the config.yaml AUDIT_AWS_CLOUDWATCHLOGS_ALERT_RECIPIENT value
+This composite monitors cloudwatchlogs against best practices and optionally emails a report to per the AUDIT&#95;AWS&#95;CLOUDWATCHLOGS&#95;ALERT&#95;RECIPIENT plan variable.
+
 
 ## Hierarchy
 ![composite inheritance hierarchy](https://raw.githubusercontent.com/CloudCoreo/audit-aws-cloudwatchlogs/master/images/hierarchy.png "composite inheritance hierarchy")
@@ -50,8 +51,9 @@ This repo is designed to work with CloudCoreo. It will monitor cloudwatchlogs ag
 ## Tags
 1. Audit
 1. Best Practices
-1. Alert
+1. Inventory
 1. cloudwatchlogs
+
 
 ## Categories
 1. AWS Services Audit

@@ -1,1 +1,1 @@
-This repo is designed to work with CloudCoreo. It will monitor cloudwatchlogs against best practices for you and send a report to the email address designated by the config.yaml AUDIT_AWS_CLOUDWATCHLOGS_ALERT_RECIPIENT value
+This composite monitors cloudwatchlogs against best practices and optionally emails a report to per the AUDIT&#95;AWS&#95;CLOUDWATCHLOGS&#95;ALERT&#95;RECIPIENT plan variable.
