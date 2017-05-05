@@ -1,1 +1,1 @@
-This composite monitors cloudwatchlogs against best practices and reports violations and inventory.
+This composite monitors cloudwatchlogs against best practices and reports violations and inventory

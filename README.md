@@ -4,7 +4,7 @@ This composite monitors cloudwatchlogs and reports best practice violations, sta
 
 
 ## Description
-This composite monitors cloudwatchlogs against best practices and reports violations and inventory.
+This composite monitors cloudwatchlogs against best practices and reports violations and inventory
 
 
 ## Hierarchy
