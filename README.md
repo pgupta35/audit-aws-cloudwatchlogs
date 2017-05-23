@@ -34,16 +34,15 @@ This composite monitors cloudwatchlogs against best practices and reports violat
 
 ## Optional variables with default
 
-### `AUDIT_AWS_CLOUDWATCHLOGS_ALERT_LIST`:
-  * description: Which rules would you like to run? Possible values are cloudwatchlogs-inventory
-  * default: cloudwatchlogs-inventory
-
 ### `AUDIT_AWS_CLOUDWATCHLOGS_OWNER_TAG`:
   * description: Enter an AWS tag whose value is an email address of the owner of the cloudwatchlogs object. (Optional)
   * default: NOT_A_TAG
 
 
 ## Optional variables with no default
+
+### `AUDIT_AWS_CLOUDWATCHLOGS_ALERT_LIST`:
+  * description: Which rules would you like to run? Possible values are cloudwatchlogs-inventory
 
 ### `AUDIT_AWS_CLOUDWATCHLOGS_ALERT_RECIPIENT`:
   * description: Enter the email address(es) that will receive notifications. If more than one, separate each with a comma.
