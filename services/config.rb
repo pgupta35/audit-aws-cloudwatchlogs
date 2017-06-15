@@ -29,6 +29,7 @@ coreo_aws_rule_runner "advise-cloudwatchlogs" do
   rules ${AUDIT_AWS_CLOUDWATCHLOGS_ALERT_LIST}
   service :cloudwatchlogs
   regions ${AUDIT_AWS_CLOUDWATCHLOGS_REGIONS}
+  filter(${FILTERED_OBJECTS}) if ${FILTERED_OBJECTS}
 end
 
 coreo_uni_util_jsrunner "tags-to-notifiers-array-cloudwatchlogs" do
