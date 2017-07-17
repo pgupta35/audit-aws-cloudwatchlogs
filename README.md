@@ -41,6 +41,9 @@ This composite monitors cloudwatchlogs against best practices and reports violat
 
 ## Optional variables with no default
 
+### `HTML_REPORT_SUBJECT`:
+  * description: Enter a custom report subject name.
+
 ### `AUDIT_AWS_CLOUDWATCHLOGS_ALERT_LIST`:
   * description: Which rules would you like to run? Possible values are cloudwatchlogs-inventory
 
