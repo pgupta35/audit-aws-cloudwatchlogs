@@ -39,7 +39,7 @@ coreo_uni_util_jsrunner "tags-to-notifiers-array-cloudwatchlogs" do
   packages([
                {
                    :name => "cloudcoreo-jsrunner-commons",
-                   :version => "1.10.7-beta53"
+                   :version => "1.10.7-beta57"
                },
                {
                    :name => "js-yaml",
@@ -97,7 +97,7 @@ setTable();
 const argForConfig = {
     NO_OWNER_EMAIL, cloudObjects, userSuppression, OWNER_TAG,
     userSchemes, alertListArray, ruleInputs, ALLOW_EMPTY,
-    SEND_ON, cloudAccount, compositeName, planName
+    SEND_ON, cloudAccount, compositeName, planName, htmlReportSubject
 }
 
 
