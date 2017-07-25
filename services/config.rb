@@ -71,14 +71,20 @@ let userSchemes;
 
 const fs = require('fs');
 const yaml = require('js-yaml');
-
 function setSuppression() {
   try {
-    userSuppression = yaml.safeLoad(fs.readFileSync('./suppression.yaml', 'utf8'));
+      userSuppression = yaml.safeLoad(fs.readFileSync('./suppression.yaml', 'utf8'));
   } catch (e) {
-    console.log(`Error reading suppression.yaml file`);
-    userSuppression = [];
+    if (e.name==="YAMLException") {
+      throw new Error("Syntax error in suppression.yaml file. "+ e.message);
+    }
+    else{
+      console.log(e.name);
+      console.log(e.message);
+      userSuppression=[];
+    }
   }
+
   coreoExport('suppression', JSON.stringify(userSuppression));
 }
 
@@ -86,9 +92,16 @@ function setTable() {
   try {
     userSchemes = yaml.safeLoad(fs.readFileSync('./table.yaml', 'utf8'));
   } catch (e) {
-    console.log(`Error reading table.yaml file`);
-    userSchemes = {};
+    if (e.name==="YAMLException") {
+      throw new Error("Syntax error in table.yaml file. "+ e.message);
+    }
+    else{
+      console.log(e.name);
+      console.log(e.message);
+      userSchemes={};
+    }
   }
+
   coreoExport('table', JSON.stringify(userSchemes));
 }
 setSuppression();
