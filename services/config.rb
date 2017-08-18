@@ -213,7 +213,7 @@ COMPOSITE::coreo_uni_util_jsrunner.tags-rollup-cloudwatchlogs.return
 end
 
 coreo_aws_s3_policy "cloudcoreo-audit-aws-cloudwatchlogs-policy" do
-  action((("${S3_BUCKET_NAME}".length > 0) ) ? :create : :nothing)
+  action((("${AUDIT_AWS_CLOUDWATCHLOGS_S3_NOTIFICATION_BUCKET_NAME}".length > 0) ) ? :create : :nothing)
   policy_document <<-EOF
 {
 "Version": "2012-10-17",
@@ -226,8 +226,8 @@ coreo_aws_s3_policy "cloudcoreo-audit-aws-cloudwatchlogs-policy" do
 ,
 "Action": "s3:*",
 "Resource": [
-"arn:aws:s3:::${S3_BUCKET_NAME}/*",
-"arn:aws:s3:::${S3_BUCKET_NAME}"
+"arn:aws:s3:::${AUDIT_AWS_CLOUDWATCHLOGS_S3_NOTIFICATION_BUCKET_NAME}/*",
+"arn:aws:s3:::${AUDIT_AWS_CLOUDWATCHLOGS_S3_NOTIFICATION_BUCKET_NAME}"
 ]
 }
 ]
@@ -236,19 +236,19 @@ coreo_aws_s3_policy "cloudcoreo-audit-aws-cloudwatchlogs-policy" do
 end
 
 coreo_aws_s3_bucket "cloudcoreo-audit-aws-cloudwatchlogs" do
-  action :create
+  action((("${AUDIT_AWS_CLOUDWATCHLOGS_S3_NOTIFICATION_BUCKET_NAME}".length > 0) ) ? :create : :nothing)
   bucket_policies ["cloudcoreo-audit-aws-cloudwatchlogs-policy"]
   region "us-east-1"
 end
 
 coreo_uni_util_notify "cloudcoreo-audit-aws-cloudwatchlogs-s3" do
-  action((("${S3_BUCKET_NAME}".length > 0) ) ? :notify : :nothing)
+  action((("${AUDIT_AWS_CLOUDWATCHLOGS_S3_NOTIFICATION_BUCKET_NAME}".length > 0) ) ? :notify : :nothing)
   type 's3'
   allow_empty true
   payload 'COMPOSITE::coreo_uni_util_jsrunner.tags-to-notifiers-array-cloudwatchlogs.report'
   endpoint ({
       object_name: 'aws-cloudwatchlogs-json',
-      bucket_name: '${S3_BUCKET_NAME}',
+      bucket_name: '${AUDIT_AWS_CLOUDWATCHLOGS_S3_NOTIFICATION_BUCKET_NAME}',
       folder: 'cloudwatchlogs/PLAN::name',
       properties: {}
   })
