@@ -3,3 +3,6 @@ cloudwatchlogs-inventory:
 #  "retention_in_days": "+__OBJECT__.violations.__RULE__.result_info.0.object.retention_in_days+"
   "Metric Filter Count": "+__OBJECT__.violations.__RULE__.result_info.0.object.metric_filter_count+"
   "AWS Region": "+__OBJECT__.violations.__RULE__.region+"
+default:
+  "Object ID": "__OBJECT__"
+  "Region": "+__OBJECT__.violations.__RULE__.region+"
