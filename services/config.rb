@@ -15,6 +15,23 @@ coreo_aws_rule "cloudwatchlogs-inventory" do
   id_map "object.log_groups.log_group_name"
 end
 
+coreo_aws_rule "cloudwatchlogsmetricfilters-inventory" do
+  action :define
+  service :cloudwatchlogs
+  link "http://kb.cloudcoreo.com/mydoc_all-inventory.html"
+  include_violations_in_count false
+  display_name "CloudwatchLogs Metric Filter Inventory"
+  description "This rule performs an inventory on all cloudwatchlogs metric filters in the target AWS account."
+  category "Inventory"
+  suggested_action "None."
+  level "Informational"
+  objectives ["describe_metric_filters"]
+  audit_objects ["object.metric_filters.filter_name"]
+  operators ["=~"]
+  raise_when [//]
+  id_map "object.metric_filters.filter_name"
+end
+
 coreo_uni_util_variables "cloudwatchlogs-planwide" do
   action :set
   variables([
