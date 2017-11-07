@@ -3,7 +3,7 @@ coreo_aws_rule "cloudwatchlogs-inventory" do
   service :cloudwatchlogs
   link "http://kb.cloudcoreo.com/mydoc_all-inventory.html"
   include_violations_in_count false
-  display_name "CloudwatchLogs Inventory"
+  display_name "CloudWatchLogs Inventory"
   description "This rule performs an inventory on all cloudwatchlogs objects in the target AWS account."
   category "Inventory"
   suggested_action "None."
@@ -20,7 +20,7 @@ coreo_aws_rule "cloudwatchlogsmetricfilters-inventory" do
   service :cloudwatchlogs
   link "http://kb.cloudcoreo.com/mydoc_all-inventory.html"
   include_violations_in_count false
-  display_name "CloudwatchLogs Metric Filter Inventory"
+  display_name "CloudWatchLogs Metric Filter Inventory"
   description "This rule performs an inventory on all cloudwatchlogs metric filters in the target AWS account."
   category "Inventory"
   suggested_action "None."
